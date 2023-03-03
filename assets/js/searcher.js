@@ -2,10 +2,7 @@
 //  JSON: Obtenemos los productos desde un objeto JSON.
 //       Se cargan en la plantilla HTML y se retorna a un arreglo con los productos contenidos.
 // ---------------------------------------------------------------------------------------------
-async function getObjectJson(
-    URL = "https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.json",
-    viewProducts
-) {
+async function getObjectJson( URL, viewProducts ) {
     try {
         let listaProductos = [];
         const respuesta = await fetch(URL);
@@ -45,10 +42,7 @@ async function getObjectJson(
 //  XML: Obtenemos los productos desde un objeto XML.
 //       Se cargan en la plantilla HTML y se retorna a un arreglo con los productos contenidos.
 // ---------------------------------------------------------------------------------------------
-async function getObjectXml(
-    URL = "https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.xml",
-    viewProducts
-) {
+async function getObjectXml( URL, viewProducts ) {
     try {
         let listaProductos = [];
         const respuesta = await fetch(URL);
@@ -187,7 +181,8 @@ let displayProduct = (arrayProd) => {
 
 let loadPage = async () => {
     try {
-        let URL = "https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products";
+    // Old Link    let URL = "https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products";
+        let URL = "https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products";
         let arrayProducts = await loadProducts(URL);
         let button = document.getElementById("filter");
 
